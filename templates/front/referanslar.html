@@ -1,0 +1,24 @@
+{%  extends 'front/app.html' %}
+
+{%  block content %}
+<div class="container page-container">
+     <div class="row page-row">
+
+         {% for rf in ref %}
+             <div class="col-md-4">
+                 <a class="ref-unit-url" href="/referans/{{ rf.ref_url }}">
+                     <div class="card">
+                          <img class="card-img-top" src="{{ rf.ref_resim.url }}" alt="Card image cap">
+                          <div class="card-body">
+                            <h5 class="card-title">{{ rf.ref_baslik }}</h5>
+                            <p class="card-text">{{ rf.ref_adi }}</p>
+                          </div>
+                        </div>
+                 </a>
+             </div>
+
+         {% endfor %}
+
+   </div>
+</div>
+{% endblock %}

@@ -1,0 +1,129 @@
+{%  extends 'front/app.html' %}
+{%  block seo %}
+        <title>{{ seo.seo_baslik }}</title>
+      <meta name="keywords" content="{{ seo.seo_keywords }}">
+      <meta name="description" content="{{ seo.seo_aciklama }}">
+   {% endblock %}
+{%  block content %}
+
+    {% include 'include/slider.html' %}
+    <div class="container-fluid web-content" >
+
+             <div class="container">
+             <div class="row">
+                 <div class="col-md-6 web-aciklama">
+                     <h3>  İnternet Çağında İnsanlara En Hızlı, En Kolay ve En Çok İnternetten Ulaşılır !</h3>
+                     <p>
+
+ İşinize uygun, yüksek kalitede web siteleri tasarlıyoruz, teslimat sonrası hızlı destek hizmeti sunuyoruz, arama motoru optimizasyonları ve entegrasyonları, reklam tasarımları, sosyal medya hizmetleri sunuyoruz.
+                     </p>
+                 </div>
+             </div>
+                 </div>
+
+     </div>
+
+
+    <div class="container">
+    <div class="row ikonrow">
+
+				     	  <div class="col-md-4 i_box">
+                              <span class="ikons"><i class="fa fa-desktop i_ikon" aria-hidden="true"></i></span>
+				     	     <div class="i_baslik"><h2>WEB TASARIMI</h2></div>
+				     	     <div class="i_aciklama">
+				     	      <p>
+				     	      	Gelişen teknoloji, web sitelerini daha akıllı ve kullanışlı hale getirdi. biz de, işinize uygun yeni teknolojilerle uyumlu, şık ve kullanışlı web siteleri tasarlıyoruz.
+				     	      </p>
+
+				     	     </div>
+
+				    	 </div>
+				    	 <div class="col-md-4 i_box">
+                             <span class="ikons"><i class="fas fa-chart-line i_ikon"></i></span>
+				     	     <div class="i_baslik"><h2>SEO</h2></div>
+				     	     <div class="i_aciklama">
+				     	      <p>
+				     	      	Web sitenizin arama motorlarında üst sırlarda görünmesi için gerekli düzenleme ve güncellemeleri yapıyoruz. Her zaman üst sıralarda kalmanızı sağlıyoruz.
+				     	      </p>
+
+				     	     </div>
+
+				    	 </div>
+				    	 <div class="col-md-4 i_box">
+                             <span class="ikons"><i class="fab fa-google i_ikon"></i></span>
+				     	     <div class="i_baslik"><h2>GOOGLE AMP </h2></div>
+				     	     <div class="i_aciklama">
+				     	      <p>
+				     	      	Googlenin mobil görünürlük ve kullanım kolaylığını artırmak için uyguladığı "Hızlandırılmış Mobil Sayfa" uygulaması olan AMP uygulamaları yapıyoruz.
+				     	      </p>
+
+				     	     </div>
+
+				    	 </div>
+
+
+				    	 <div class="col-md-4 i_box">
+                             <span class="ikons"><i class="fa fa-cogs i_ikon" aria-hidden="true"></i></span>
+				     	     <div class="i_baslik"><h2>TEKNİK DESTEK</h2></div>
+				     	     <div class="i_aciklama">
+				     	      <p>
+				     	      	Teslim sonrası teknik destek ve bakım hizmeti sunarak web sitenizin her zaman yayında ve canlı kalmasını sağlıyoruz.
+				     	      </p>
+
+				     	     </div>
+
+				    	 </div>
+				    	 	 <div class="col-md-4 i_box">
+                                 <span class="ikons"><i class="fab fa-adversal i_ikon"></i></span>
+				     	     <div class="i_baslik"><h2>ADWORDS REKLAM</h2></div>
+				     	     <div class="i_aciklama">
+				     	      <p>
+				     	      	Google adwords reklam creatasyonu, anahtar kelime analizi,  raporlama, hedefkitle analizi, ve optimizasyon hizmetleri sunuyoruz, reklamlarınızın daha verimli olmasınız sağlıyoruz.
+				     	      </p>
+
+				     	     </div>
+
+				    	 </div>
+
+				    	 	 <div class="col-md-4 i_box">
+                                 <span class="ikons"><i class="fa fa-tag i_ikon" aria-hidden="true"></i></span>
+				     	     <div class="i_baslik"><h2>E_TİCARET</h2></div>
+				     	     <div class="i_aciklama">
+				     	      <p>
+				     	      	İşinize uygun modern teknolojiler ile uyumlu e-ticaret sistemleri tasarlıyoruz, xml ürün entegrasyonları ve sanal pos entegrasyonları yapıyoruz
+				     	      </p>
+
+				     	     </div>
+
+				    	 </div>
+
+
+
+
+
+
+
+    </div>
+    </div>
+
+    <div class="container-fluid ref-ful">
+    <div class="ref-head"><h3 class="btn btn-outline-warning">Neler Yaptık</h3></div>
+        <div class="row ref-row">
+            {% for re in ref %}
+
+                <div class="col-md-4 ref-unit" id="runit" style="background-image: url('{{ re.ref_resim.url }}')">
+
+                <div class="ref-link" id="roverlay" onclick="location.href='/referans/{{ re.ref_url }}'">
+                    <p>{{ re.ref_adi }}</p>
+                    <a href="/referans/{{ re.ref_url }}"><i class="fas ikon-link fa-link"></i></a>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    <div class="ref-head"><h3><a class="btn btn-warning" href="/referaslarımız">Tümünü Gör</a></h3></div>
+    </div>
+
+
+{% endblock %}
+

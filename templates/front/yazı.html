@@ -1,0 +1,37 @@
+{%  extends 'front/app.html' %}
+{%  block seo %}
+ <title>{{ yazi.blog_seo_baslik }}</title>
+      <meta name="keywords" content="{{ yazi.blog_seo_keywords }}">
+      <meta name="description" content="{{ yazi.blog_seo_aciklama }}">
+   {% endblock %}
+{%  block content %}
+<div class="container page-container">
+     <div class="row page-row">
+
+         <div class="col-md-8 blog-cont">
+             <h1>{{ yazi.blog_baslik }}</h1>
+             <h2>{{ yazi.blog_altbaslik }}</h2>
+             <b>{{ yazi.blog_giris }}</b>
+             <div class="blog-resim">
+                 <img class="blog-img" src="{{ yazi.blog_resim.url }}" alt="{{ yazi.blog_baslik }}">
+             </div>
+             <p>{{ yazi.blog_icerik }}</p>
+
+         </div>
+         <div class="col-md-4">
+                <h3>Son yazılar</h3>
+
+             {% for blg in blog %}
+                 <div class="blg-son">
+                 <a class="blg-link" href="/yazı/{{ blg.blog_url}}">
+                 <h4>{{ blg.blog_baslik }}</h4>
+                 <p>{{ blg.blog_giris }}</p>
+                 </a>
+                 </div>
+             {%  endfor %}
+
+         </div>
+
+   </div>
+</div>
+{% endblock %}

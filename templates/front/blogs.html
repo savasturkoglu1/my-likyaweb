@@ -1,0 +1,28 @@
+{%  extends 'front/app.html' %}
+{%  block seo %}
+ <title>Web Geliştirme hakkında Blog</title>
+      <meta name="keywords" content="Kalkan web, kaş web, fethiye web, web tasarım, web blog, web geliştirme">
+      <meta name="description" content="Kalkan Kaş ve Fethiye bölgesinde kaliteli web tasarım hizmeti sunuyoruz. bu blogda da web geliştirme ve web trendleri ilgili ufak yazılar var">
+   {% endblock %}
+{%  block content %}
+<div class="container page-container">
+     <div class="row page-row">
+
+         {% for blog in blog %}
+             <div class="col-md-4">
+                 <a class="ref-unit-url" href="/yazı/{{ blog.blog_url}}">
+                     <div class="card">
+                          <img class="card-img-top" src="{{ blog.blog_resim.url }}" alt="Card image cap">
+                          <div class="card-body">
+                            <h5 class="card-title">{{ blog.blog_baslik }}</h5>
+                            <p class="card-text">{{ blog.blog_adi }}</p>
+                          </div>
+                        </div>
+                 </a>
+             </div>
+
+         {% endfor %}
+
+   </div>
+</div>
+{% endblock %}

@@ -1,0 +1,53 @@
+
+{% load static %}
+<!doctype html>
+
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+         <link rel="stylesheet" href="{% static 'mystil.css' %}">
+       {%  block seo %}
+
+   {% endblock %}
+
+      <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+       <link rel="icon" href="{% static 'resimler/fv.png' %}" type="image" sizes="16x16">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.css" />
+  </head>
+  <body>
+  {% include 'include/navbar.html' %}
+    {%  block content %}
+
+        
+
+   {% endblock %}
+
+
+
+    <script src="{% static 'jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'bootstrap.min.js' %}"></script>
+   <script src="{% static 'myscript.js' %}"></script>
+<script>
+
+
+
+       $(".ref-unit").on('mouseenter',function () {
+
+           $(this).find('div').show(200);
+       });
+       $(".ref-unit").on('mouseleave',function () {
+
+           $(this).find('div').hide(200);
+       });
+
+
+
+
+    </script>
+{% include 'include/footer2.html' %}
+  </body>
+</html>

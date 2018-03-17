@@ -1,0 +1,60 @@
+{%  extends 'front/app.html' %}
+{%  block seo %}
+ <title>{{ ref.ref_seo_baslik }}</title>
+      <meta name="keywords" content="{{ ref.ref_.seo_keywords }}">
+      <meta name="description" content="{{ ref.ref_seo_aciklama }}">
+   {% endblock %}
+
+{%  block content %}
+<div class="container page-container">
+<div class="row page-row">
+      <div class="col-md-6 ilt-border">
+          <h3>İletişim Bilgileri</h3>
+          <h6 class="text-uppercase font-weight-bold"><strong>İletişim</strong></h6>
+                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p><i class="fa fa-home mr-3"></i> Şehitler Cad no 16 Kalkan/Antalya</p>
+                <p><i class="fa fa-envelope mr-3"></i> info@likyawebtasarim.com</p>
+
+                <p><i class="fa fa-phone mr-3"></i> + 90 850 466 2357</p>
+                <p><i class="fa fa-print mr-3"></i> + 90 0506 880 75 77</p>
+      </div>
+       <div class="col-md-6 ilt-frm">
+           <form action="/yenimesaj" method="post" id="ilt-form" onsubmit="return false">
+           <input type="hidden" name="ilt_turu" value="mesaj">
+           {% csrf_token %}
+            <h3>Mesaj Bırakın</h3>
+           <input type="text" name="ilt_isim" id="ilt_isim" class="form-control aform" placeholder="Adınız">
+           <input type="text" name="ilt_telefon" id="ilt_telefon" class="form-control aform" placeholder="Telefon numaranız">
+           <input type="text" name="ilt_eposta" class="form-control aform" placeholder="Eposta Adresiniz">
+           <textarea name="ilt_mesaj" id="ilt_mesaj"  cols="30" rows="6" class="form-control aform" placeholder="Mesajınız"></textarea>
+           <button class="btn btn-success" onclick="mesajgonder()">Gönder</button>
+        </form>
+       </div>
+    <div class="col-md-12 ilt-map">
+        <div id="map" ></div>
+    </div>
+    </div>
+</div>
+
+    <script>
+
+      function initMap() {
+        var myLatLng = {lat:36.268666, lng: 29.412229};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 14,
+          center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Hello World!'
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiz6Gr_7mmxp-yCwyMmqQ0gWcxAzzScxg
+&callback=initMap">
+    </script>
+{% endblock %}
